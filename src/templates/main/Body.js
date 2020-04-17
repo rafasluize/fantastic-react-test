@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Header from './Header';
 import './scss/main.scss';
 import { useDispatch } from 'react-redux';
+import Loading from '../../components/Loading/Loading';
 
 
 export function Body({ children }) {
@@ -26,6 +27,7 @@ export function Body({ children }) {
 
 	return (
 		<main className="fantastic-test">
+			<Loading/>
 			<Header />
 			{ children }
 		</main>

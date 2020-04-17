@@ -1,0 +1,26 @@
+@import '../../assets/scss/_variables.scss';
+
+.btn {
+  border-radius: 10px;
+  box-shadow: none;
+  outline: none !important;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+
+  &:focus{
+    box-shadow: none !important;
+  }
+  &.btn-link{
+    border:none;
+    background-color: transparent;
+    &:hover{
+      color: $secondary;
+    }
+  }
+  &:hover, &:focus{
+    outline: none !important;
+
+  }
+
+}
+
