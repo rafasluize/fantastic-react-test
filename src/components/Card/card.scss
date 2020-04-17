@@ -6,6 +6,7 @@
 	border: none;
 	flex: 1 0 auto;
 	width: 18rem;
+	max-width: 100%;
 	-webkit-transition: all 0.7s cubic-bezier(0, 0, 0.2, 1);
 	transition: all 0.7s cubic-bezier(0, 0, 0.2, 1);
 	justify-content: flex-start;
@@ -18,9 +19,18 @@
 		font-weight: 600;
 		color:$primary;
 		margin-top: 0;
+		small{
+			color:$default;
+			font-size: .8rem;
+		}
 	}
 	.time-light{
 		color: #6a6a6a;
 		font-weight: 300;
+	}
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.card{
+		width: 14rem;
 	}
 }

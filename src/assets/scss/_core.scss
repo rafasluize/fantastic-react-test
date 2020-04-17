@@ -1,10 +1,35 @@
+::-moz-selection {
+    color: #fff !important;
+    background-color: #50cbb2 !important;
+}
 
+::selection {
+    color: #fff !important;
+    background-color: #50cbb2 !important;
+}
+
+input {
+	padding: .375rem .75rem;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	&:focus {
+		box-shadow: 0 0 0 .1rem #feaec8;
+		border-color: #ccc;
+	}
+}
 .bg-primary {
 	background-color: $primary;
 }
 
 .text-primary {
 	color: $primary
+}
+.text-grey {
+	color: $font-grey
 }
 .text-left{
 	text-align: left;
@@ -82,12 +107,20 @@
 	margin-top: $default-size/4;
 }
 
+.mr-5 {
+	margin-right: $default-size/4;
+}
+
 .mt-10 {
 	margin-top: $default-size/2;
 }
 
 .mb-10 {
 	margin-bottom: $default-size/2;
+}
+
+.mb-5 {
+	margin-bottom: $default-size/4;
 }
 
 .mb-20 {
@@ -130,6 +163,9 @@
 .d-block {
 	display: block !important;
 }
+.align-items-center{
+	align-items: center;
+}
 
 @each $direction in $directions {
 	.justify-content-#{$direction} {
@@ -137,7 +173,6 @@
 	}
 }
 .container {
-	width: 100%;
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;

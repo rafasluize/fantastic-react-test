@@ -4,7 +4,7 @@
   border-radius: 10px;
   box-shadow: none;
   outline: none !important;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   cursor: pointer;
 
   &:focus{
@@ -17,7 +17,16 @@
       color: $secondary;
     }
   }
-  &:hover, &:focus{
+  &.btn-secondary{
+    border:none;
+    background-color: $secondary;
+    color:$default;
+    &:hover{
+      color:$white;
+      background-color: $primary;
+    }
+  }
+  &:hover, &:focus,  &:focus{
     outline: none !important;
 
   }

@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './loading.scss';
-import { loadingService } from '../../rxjs/services';
+import { useSelector } from 'react-redux';
 
 export default function Loading() {
 
-  const [ show, setShow ] = useState(false);
+  const show = useSelector(state => {
+      return state.loadingReducer.display;
+  })
 
-  useEffect(() => {
-    const subscription = loadingService.getLoading().subscribe((value) => {
-      setShow(value);
-    });
-
-    return () => {
-      subscription.unsubscribe();
-    }
-  });
   
   return(
     <div id="loading" className={`${ show ? '' : 'd-none'}`}>

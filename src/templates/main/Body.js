@@ -1,29 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import Header from './Header';
 import './scss/main.scss';
-import { useDispatch } from 'react-redux';
 import Loading from '../../components/Loading/Loading';
 
 
 export function Body({ children }) {
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		onCheckDevice();
-		window.addEventListener('resize', onCheckDevice);
-		return () => window.removeEventListener('resize', onCheckDevice);
-		
-	}, []);
-
-	function onCheckDevice() {
-		let width = document.body.clientWidth;
-		if(width <= 1199.98) {
-			dispatch({ type: 'RESIZE_REDUCER', data: 'MOBILE' })
-		} else {
-			dispatch({ type: 'RESIZE_REDUCER', data: 'DESKTOP' })
-		}
-	}
 
 	return (
 		<main className="fantastic-test">

@@ -1,10 +1,8 @@
 import axios from 'axios';
-import { loadingService } from '../rxjs/services';
 
-
-export function callApi(method, url, body = {}) {
+export function callApi(method, url, body = {}, dispatch) {
   return new Promise( async (resolve, reject) => {
-    loadingService.showLoading();
+    dispatch({ type: 'LOADING', data: 'SHOW' })
 
     let objCall = {
         method: method,
@@ -21,11 +19,12 @@ export function callApi(method, url, body = {}) {
 
       if(error.request.response && error.request.response.indexOf('<') < 0) {
         const response = JSON.parse(error.request.response);
+        console.log(response)
       }
 
       reject(error);
     } finally {
-      loadingService.hideLoading();
+      dispatch({ type: 'LOADING', data: 'HIDE' })
     }
   });
 }
