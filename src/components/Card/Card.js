@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './card.scss'
 import moment from 'moment';
 import Button from '../Button/Button';
 import { FaChevronRight } from 'react-icons/fa';
 
-export default function Card({data, index, className, author}) {
+export default function Card({data, index, className, author, onView}) {
     return (
         <div className={`card p-20 d-flex flex-column ${className ? className : ''}`}>
             <h4 className="mb-5">{
@@ -20,6 +20,7 @@ export default function Card({data, index, className, author}) {
                 <Button
                     styleType="link"
                     text="See more"
+                    click={ () => onView(data, author) }
                     icon={ <FaChevronRight  size={10} />}
                 />
             </div>

@@ -26,6 +26,14 @@
       background-color: $primary;
     }
   }
+  &.btn-default{
+    border:none;
+    background-color: $grey;
+    color:$default;
+    &:hover{
+      background-color: $grey_dark;
+    }
+  }
   &:hover, &:focus,  &:focus{
     outline: none !important;
 
