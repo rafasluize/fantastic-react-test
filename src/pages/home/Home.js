@@ -54,6 +54,7 @@ export default function Home() {
                  }
                  setListPublicationFilter(filterPublications)
             } else {
+                setListPublicationFilter([])
                 setResponseFilter(true);
             }
             
@@ -148,12 +149,11 @@ export default function Home() {
                             listPublication.map((item, index) => 
                                 <div key={ index } className="px-20 my-20 d-flex flex-column">
                                     <Card
-                                    author={  listAuthor.find(a => a.id === item.metadata.authorId) }
-                                    data={ item } 
-                                    index={index}
-                                    onView={onView}
-
-                                />
+                                        author={  listAuthor.find(a => a.id === item.metadata.authorId) }
+                                        data={ item } 
+                                        index={index}
+                                        onView={onView}
+                                    />
                                 </div>
                             )
                         }

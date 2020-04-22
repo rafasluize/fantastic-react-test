@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import './card.scss'
 import moment from 'moment';
 import Button from '../Button/Button';

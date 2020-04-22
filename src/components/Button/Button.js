@@ -12,7 +12,7 @@ export default function Button({ text, click, icon, styleType, id, className,  t
       id={ id }
       type={ type ? type : 'button' }
       className={`btn btn-${styleType} ${className ? className : ''}`} >
-        { text } { icon }
+         { icon } { text }
     </button>
     </>
   )
